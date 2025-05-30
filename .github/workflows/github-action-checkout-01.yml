@@ -12,7 +12,7 @@ jobs:
         run: ls -al
         
       - name: Github Actions Checkout
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
         
       - run: ls -al
         
