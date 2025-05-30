@@ -1,3 +1,4 @@
+### github-action-checkout-01.yml
 name: Test Github Actions checkout-01
 run-name: Run Github Actions checkout
 on:
@@ -7,8 +8,11 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
+      - name: Print ls
+        run: ls -al
+        
       - name: Github Actions Checkout
-      - run: ls -al
-      - uses: actions/checkout@4
+        uses: actions/checkout@4
+        
       - run: ls -al
         
