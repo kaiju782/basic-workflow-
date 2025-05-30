@@ -1,5 +1,3 @@
-### github-action-variable-04.yml
-
 name: Test Github Actions variable-04
 run-name: Run Github Actions inputs, outputs, needs
 on:
@@ -18,11 +16,11 @@ jobs:
     steps:
       - name: Print input data
         id: uppercase
-        run: echo "result = $(echo '${{ github.event.inputs.name }}') | tr 'a-z' 'A-Z')" >> $GITHUB_OUTPUT
+        run: echo "result=$(echo '${{ github.event.inputs.name }}' | tr 'a-z' 'A-Z')" >> $GITHUB_OUTPUT
 
   output-data:
     needs: input-date
     runs-on: ubuntu-latest
     steps:
       - name: Print Output data
-        run: echo "Hello, ${{ needs.input-data.outputs.upper_name }}"
+        run: echo "Hello, ${{ needs.input-date.outputs.upper_name }}"
