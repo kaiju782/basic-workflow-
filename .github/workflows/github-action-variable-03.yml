@@ -6,8 +6,8 @@ on:
   workflow_dispatch
 
 jobs:
-  check-vars-context:
+  check-secrets-context:
     runs-on: ubuntu-letest
     steps:
-      - name: "Hello, Var_Test"
-        run: echo "Hello, ${{ vars.VAR_TEST }}"
+      - name: "Hello, secrets_Test"
+        run: echo "Hello, ${{ secrets.SECRET_TEST }}"
